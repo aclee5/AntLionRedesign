@@ -8,15 +8,17 @@ public class GameManager : MonoBehaviour
     private bool hasEnded = false;
     public float restartDelay = 1f;
     public GameObject completeLevelUI;
+    public GameObject hudUI;
+    public GameObject gameOverUI;
     
     public int state;
     public const int WIN = -1;
     public const int LOSE = -2;
-    public const int LEVEL0 = 0;
+    public const int LEVEL1 = 1;
 
     //gameStates;
     void Start(){
-        state = LEVEL0;
+        state = LEVEL1;
 
     }
 
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
             case LOSE:
                 EndGame();
                 break;
-            case LEVEL0:
+            case LEVEL1:
                 break;
 
 
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
         if(hasEnded == false){
             Debug.Log("Game Over");
             hasEnded = true;
-            Invoke("Restart", restartDelay);
+            Invoke("ShowEndScreen", restartDelay);
 
         }
         
@@ -55,11 +57,18 @@ public class GameManager : MonoBehaviour
     public void LevelComplete(){
         Debug.Log("Level won");
         completeLevelUI.SetActive(true);
+        hudUI.SetActive(false);
 
     }
 
     public void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowEndScreen(){
+        gameOverUI.SetActive(true);
+        hudUI.SetActive(false);
+
     }
 }
 
