@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
       if(collision.gameObject.CompareTag("Enemy")){
          Debug.Log("Hit!");
          FindObjectOfType<GameManager>().UpdateState(-2);
-         
+
 
 
 
