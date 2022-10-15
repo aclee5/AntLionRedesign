@@ -8,5 +8,5 @@ public class TileData : ScriptableObject
 {
     public TileBase[] tiles;
 
-    public float timeAdd, timeDecrease;
+    public float timeAdd;
 }
