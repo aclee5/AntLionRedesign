@@ -5,8 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] Transform player;
+    [SerializeField] PlayerCollision playerCol;
     [SerializeField] float agroRange;
     [SerializeField] float moveSpeed;
+    [SerializeField] int health;
+    [SerializeField] HealthBar healthBar;
+    public GameManager gameManager;
 
     //random walk/wander: https://forum.unity.com/threads/making-npcs-wander-in-2d.524950/
 
@@ -23,22 +27,38 @@ public class EnemyController : MonoBehaviour
     {
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
         ChooseMoveDirection();
+        healthBar.SetMaxHealth(health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if(distToPlayer < agroRange){
-            //code to chase player
-            PlayerChase();
+        if(playerCol.onSafeTile){
+            StopPlayerChase();
+            
         }
 
         else{
-            //stop chasing player
-            StopPlayerChase();
+            PlayerChase();
+            
         }
+
+        if (health <= 0){
+            gameManager.UpdateState(-1);   
+            
+        }
+        //float distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        // if(distToPlayer < agroRange){
+        //     //code to chase player
+        //     PlayerChase();
+        // }
+
+        // else{
+        //     //stop chasing player
+        //     StopPlayerChase();
+        // }
     }
 
     private void PlayerChase(){
@@ -59,7 +79,18 @@ public class EnemyController : MonoBehaviour
 
     }
 
+
+
     private void ChooseMoveDirection(){
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
     }
+
+
+    void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Obstacle")){
+            health -= 1;
+            healthBar.SetHealth(health);           
+
+        }
+   }
 }

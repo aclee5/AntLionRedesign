@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool hasEnded = false;
-    public float restartDelay = 0.5f;
+    public float restartDelay = 0;
     public GameObject completeLevelUI;
     public GameObject hudUI;
     public GameObject gameOverUI;

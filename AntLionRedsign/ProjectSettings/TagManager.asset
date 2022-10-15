@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - TileMap
+  - Obstacle
   layers:
   - Default
   - TransparentFX

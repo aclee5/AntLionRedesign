@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
    [SerializeField] private float coolDown;
 
    private TileBase currTile;
+   public bool onSafeTile;
    
    
 
@@ -21,15 +22,24 @@ public class PlayerCollision : MonoBehaviour
          FindObjectOfType<GameManager>().UpdateState(-2);
 
       }
-
-      
+     
 
 
    
    }
+
+   void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Obstacle") && !onSafeTile){
+            Debug.Log("Losing");
+            FindObjectOfType<GameManager>().UpdateState(-2);   
+
+        }
+   }
+
    void Start(){
       Vector3Int mapTile = mapManager.map.WorldToCell(transform.position);
       currTile = mapManager.map.GetTile(mapTile);
+      onSafeTile = false; 
 
    }
 
@@ -45,10 +55,9 @@ public class PlayerCollision : MonoBehaviour
          TileBase onTile = mapManager.map.GetTile(mapTile);
          if(onTile != currTile){
             float timeAdd = mapManager.dataFromTiles[onTile].timeAdd;
+            onSafeTile = mapManager.dataFromTiles[onTile].safe;
             countDownTimer.addTime(timeAdd);
-            Debug.Log(timeAdd);
             currTile = onTile;
-
          }        
          yield return null;
          

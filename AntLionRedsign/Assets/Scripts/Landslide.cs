@@ -5,21 +5,21 @@ using UnityEngine;
 public class Landslide : MonoBehaviour
 {
     public float speed = 10f;
+    public float disappearHeight;
     private Rigidbody2D rb;
-    private Vector2 screenBoundary;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -speed);
-        screenBoundary = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y > screenBoundary.y * 2){
+        if (transform.position.y < disappearHeight){
             Destroy(this.gameObject);
         }
     }

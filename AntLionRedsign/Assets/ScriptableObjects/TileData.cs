@@ -9,4 +9,5 @@ public class TileData : ScriptableObject
     public TileBase[] tiles;
 
     public float timeAdd;
+    public bool safe;
 }

@@ -28,7 +28,6 @@ public class LandslideController : MonoBehaviour
         GameObject a = Instantiate(landslide) as GameObject;
         a.transform.position = new Vector2(spawnLocationX, spawnLocationY);
         Debug.Log("Landslide");
-        countDownTimer.setTime(0);
         //Find landslide countdown timer to reset
         
         
@@ -41,6 +40,8 @@ public class LandslideController : MonoBehaviour
             yield return new WaitForSeconds(timeTillLandslide);
             spawnLandslide();
             yield return new WaitForSeconds(landslideLength);
+
+            
             
             
         }

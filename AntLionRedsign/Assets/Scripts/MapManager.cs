@@ -46,17 +46,7 @@ public class MapManager : MonoBehaviour
     //     }
     // }
 
-    void OnTriggerEnter2D(Collider2D collision){
-
-        Vector3Int gridPosition = map.WorldToCell(collision.transform.position);
-        TileBase clickedTile = map.GetTile(gridPosition);
-        
-        float timeAdd = dataFromTiles[clickedTile].timeAdd;
-        Debug.Log("time added on " + clickedTile + " is " + timeAdd);
-        
-
-    }
-
+   
 
 
 

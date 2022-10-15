@@ -26,8 +26,7 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(Move(targetPos));
             }
-
-          
+        
 
 
         }
