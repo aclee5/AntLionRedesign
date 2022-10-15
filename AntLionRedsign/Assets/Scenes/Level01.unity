@@ -1131,7 +1131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266678733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.053, y: -9.443, z: 0}
+  m_LocalPosition: {x: -1.053, y: -7.3, z: 0}
   m_LocalScale: {x: 5.7999997, y: 5.7999997, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1381,7 +1381,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1405,7 +1405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.053, y: -9.443, z: -10}
+  m_LocalPosition: {x: -1.053, y: -7.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_Follow: {fileID: 266678736}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2026,7 +2026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759092048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.053, y: -9.443, z: -10}
+  m_LocalPosition: {x: -1.053, y: -7.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6538,7 +6538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974688823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: -15.39, z: 0}
+  m_LocalPosition: {x: -1.1, y: -12.8, z: 0}
   m_LocalScale: {x: 14.360001, y: 14.360001, z: 14.360001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6576,7 +6576,7 @@ MonoBehaviour:
   player: {fileID: 266678736}
   playerCol: {fileID: 266678739}
   agroRange: 7
-  moveSpeed: 2
+  moveSpeed: 1.5
   health: 3
   healthBar: {fileID: 1950108319}
   gameManager: {fileID: 1315578687}
@@ -6620,6 +6620,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ad4d26bd5c43eb42b2b6c0f57000541, type: 2}
   - {fileID: 11400000, guid: 0c6282d000a1fc645944a71eefdefc1c, type: 2}
   - {fileID: 11400000, guid: 4fb51573ab1012e499e06d6fe7aaf1a3, type: 2}
+  - {fileID: 11400000, guid: 63b945c112a16e44a8201ccf5ba54500, type: 2}
 --- !u!4 &2017826644
 Transform:
   m_ObjectHideFlags: 0
