@@ -37,10 +37,10 @@ public class MapManager : MonoBehaviour
 
             TileBase clickedTile = map.GetTile(gridPosition);
 
-         //   float timeAdd = dataFromTiles[clickedTile].timeAdd;
+            float timeAdd = dataFromTiles[clickedTile].timeAdd;
 
 
-            print("at position " + gridPosition + " is " + clickedTile);
+            print("time added on " + clickedTile + " is " + timeAdd);
 
         }
     }
