@@ -9,9 +9,12 @@ public class PlayerCollision : MonoBehaviour
 {
    [SerializeField] public MapManager mapManager;
    [SerializeField] private CountDownTimer countDownTimer;
+   [SerializeField] private CountDownTimer safteyTimer;
    [SerializeField] private float coolDown;
+   [SerializeField] private float safeTime;
 
    private TileBase currTile;
+   private bool pastSafeTile;
    public bool onSafeTile;
    
    
@@ -44,6 +47,11 @@ public class PlayerCollision : MonoBehaviour
    }
 
    void Update(){
+      if ((onSafeTile)&&(onSafeTile == pastSafeTile) && (safteyTimer.currentTime == 0)){
+         
+         FindObjectOfType<GameManager>().UpdateState(-2);
+
+      }
       StartCoroutine(TileTimerEffect());
       
 
@@ -53,12 +61,21 @@ public class PlayerCollision : MonoBehaviour
       while(true){
          Vector3Int mapTile = mapManager.map.WorldToCell(transform.position);
          TileBase onTile = mapManager.map.GetTile(mapTile);
+         pastSafeTile = onSafeTile;
          if(onTile != currTile){
             float timeAdd = mapManager.dataFromTiles[onTile].timeAdd;
             onSafeTile = mapManager.dataFromTiles[onTile].safe;
-            countDownTimer.addTime(timeAdd);
+            if(onSafeTile && (onSafeTile != pastSafeTile)){
+               safteyTimer.setTime(safeTime);
+            
+            }
+            if(!onSafeTile && (onSafeTile != pastSafeTile) ){
+               safteyTimer.setTime(0);
+            }    
+            countDownTimer.addTime(timeAdd);            
             currTile = onTile;
-         }        
+         } 
+           
          yield return null;
          
          
