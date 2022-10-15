@@ -51,7 +51,7 @@ public class CountDownTimer : MonoBehaviour
     }
 
     public void setTime(float time){
-        timerText.color = Color.white;
+        timerText.color = Color.black;
         enabled = true;
         currentTime = time;
         

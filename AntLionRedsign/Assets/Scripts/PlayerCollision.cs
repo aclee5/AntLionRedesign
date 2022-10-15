@@ -9,6 +9,9 @@ public class PlayerCollision : MonoBehaviour
          Debug.Log("Hit!");
          FindObjectOfType<GameManager>().UpdateState(-2);
 
+
+
+
       }
    
    }
