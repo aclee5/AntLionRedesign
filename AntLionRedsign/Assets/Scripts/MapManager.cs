@@ -6,12 +6,13 @@ using UnityEngine.Tilemaps;
 public class MapManager : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap map;
-
+    public Tilemap map;
+    
     [SerializeField]
     private List<TileData> tileDatas;
 
-    private Dictionary<TileBase, TileData> dataFromTiles;
+
+    public Dictionary<TileBase, TileData> dataFromTiles;
 
     public void Awake()
     {
@@ -27,21 +28,37 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        Debug.Log("update");
-        if (Input.GetMouseButton(0))
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = map.WorldToCell(mousePosition);
+    // void Update()
+    // {
+    //     Debug.Log("update");
+    //     if (Input.GetMouseButton(0))
+    //     {
+    //         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //         Vector3Int gridPosition = map.WorldToCell(mousePosition);
 
-            TileBase clickedTile = map.GetTile(gridPosition);
+    //         TileBase clickedTile = map.GetTile(gridPosition);
 
-            float timeAdd = dataFromTiles[clickedTile].timeAdd;
+    //         float timeAdd = dataFromTiles[clickedTile].timeAdd;
 
 
-            print("time added on " + clickedTile + " is " + timeAdd);
+    //         print("time added on " + clickedTile + " is " + timeAdd);
 
-        }
+    //     }
+    // }
+
+    void OnTriggerEnter2D(Collider2D collision){
+
+        Vector3Int gridPosition = map.WorldToCell(collision.transform.position);
+        TileBase clickedTile = map.GetTile(gridPosition);
+        
+        float timeAdd = dataFromTiles[clickedTile].timeAdd;
+        Debug.Log("time added on " + clickedTile + " is " + timeAdd);
+        
+
     }
+
+
+
+
+
 }

@@ -57,6 +57,12 @@ public class CountDownTimer : MonoBehaviour
         
     }
 
+    public void addTime(float time){
+        currentTime = currentTime + time;
+    }
+
+
+
 
     public enum TimerFormats{
         Whole,

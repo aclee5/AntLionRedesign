@@ -996,7 +996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266678733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 0.992, z: 0}
+  m_LocalPosition: {x: 1, y: -11.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.45, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1052,6 +1052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875867ada42d2e74cbb6e50f212aba1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapManager: {fileID: 2017826643}
+  countDownTimer: {fileID: 1910947136}
+  coolDown: 2
 --- !u!114 &266678740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 0.992, z: -10}
+  m_LocalPosition: {x: 1, y: -11.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1733,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759092048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 0.992, z: -10}
+  m_LocalPosition: {x: 1, y: -11.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2281,7 +2284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
   landslideLength: 2
-  timeTillLandslide: 10
+  timeTillLandslide: 30
   spawnLocationX: 0
   spawnLocationY: 16
   countDownTimer: {fileID: 1910947136}
@@ -2659,9 +2662,10 @@ GameObject:
   - component: {fileID: 1737208995}
   - component: {fileID: 1737208997}
   - component: {fileID: 1737208996}
+  - component: {fileID: 1737208998}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: TileMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5224,6 +5228,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1737208998
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737208994}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1865344309
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,7 +5549,7 @@ MonoBehaviour:
   hasLimit: 1
   timerLimit: 0
   hasFormat: 1
-  format: 1
+  format: 0
 --- !u!4 &1910947137
 Transform:
   m_ObjectHideFlags: 0
@@ -5646,7 +5666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974688823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.01, z: 0}
+  m_LocalPosition: {x: -1, y: -16.43, z: 0}
   m_LocalScale: {x: 1.5238, y: 1.5238, z: 1.5238}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5986,12 +6006,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 33.641674
+      objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3201017
+      objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85992503
+      objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0913
+      value: 0.0434
       objectReference: {fileID: 0}
     - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.76
+      value: 16.1406
       objectReference: {fileID: 0}
     - target: {fileID: 809979748960424945, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6025,9 +6057,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424949, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424950, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
       propertyPath: m_Name
       value: Landslide
+      objectReference: {fileID: 0}
+    - target: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}

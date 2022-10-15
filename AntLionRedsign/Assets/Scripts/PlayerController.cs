@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     private bool isMoving;
     private Vector2 input;
+
+   
     // Start is called before the first frame update
     
     // Update is called once per frame
@@ -23,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
                 StartCoroutine(Move(targetPos));
             }
+
+          
+
 
         }
 
