@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Slider healthBar;
     public GameManager gameManager;
     public bool canHit;
+    public bool canMove;
 
     //random walk/wander: https://forum.unity.com/threads/making-npcs-wander-in-2d.524950/
 
@@ -31,27 +32,33 @@ public class EnemyController : MonoBehaviour
         ChooseMoveDirection();
         healthBar.maxValue = health;
         canHit = true;
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if(canMove){
+            if(playerCol.onSafeTile){
+                StopPlayerChase();
+                
+            }
 
-        if(playerCol.onSafeTile){
-            StopPlayerChase();
-            
-        }
+            else{
+                PlayerChase();
+                
+            }
 
-        else{
-            PlayerChase();
-            
-        }
+            if (health <= 0){
+                SetEnemySpeed(0);
+                canMove = false;
+                gameManager.UpdateState(-1);   
+                
+            }
 
-        if (health <= 0){
-            SetEnemySpeed(0);
-            gameManager.UpdateState(-1);   
-            
         }
+        
      
     }
 
@@ -99,7 +106,7 @@ public class EnemyController : MonoBehaviour
    }
 
    void OnTriggerExit2D(Collider2D collision){
-        if(collision.CompareTag("Obstacle")){
+        if(collision.CompareTag("Obstacle") && (FindObjectOfType<LandslideController>().occuring == true)){
             if(!canHit){
                 canHit = true;
             

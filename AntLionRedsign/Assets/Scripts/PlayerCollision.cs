@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
    }
 
    void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("Obstacle") && !onSafeTile){
+        if(collision.CompareTag("Obstacle") && !onSafeTile && (FindObjectOfType<LandslideController>().occuring == true)){
             Debug.Log("Losing");
             FindObjectOfType<GameManager>().UpdateState(-2);   
 

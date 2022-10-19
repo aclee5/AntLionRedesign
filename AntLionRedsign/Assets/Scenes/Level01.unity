@@ -1046,7 +1046,6 @@ GameObject:
   m_Component:
   - component: {fileID: 266678736}
   - component: {fileID: 266678735}
-  - component: {fileID: 266678734}
   - component: {fileID: 266678738}
   - component: {fileID: 266678737}
   - component: {fileID: 266678739}
@@ -1058,21 +1057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &266678734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266678733}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8959c59cf1809b44d82f2d7865232d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  isMoving: 0
-  input: {x: 0, y: 0}
 --- !u!212 &266678735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2877,11 +2861,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
-  landslideLength: 5
-  timeTillLandslide: 5
+  landslideLength: 2
+  timeTillLandslide: 10
   spawnLocationX: 0
   spawnLocationY: 16
   countDownTimer: {fileID: 1910947136}
+  occuring: 1
 --- !u!4 &1476892997
 Transform:
   m_ObjectHideFlags: 0
@@ -6618,6 +6603,7 @@ MonoBehaviour:
   healthBar: {fileID: 1950108318}
   gameManager: {fileID: 1315578687}
   canHit: 0
+  canMove: 0
   decisionTime: {x: -2, y: 2}
 --- !u!1 &2017826642
 GameObject:
