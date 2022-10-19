@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] int health;
     [SerializeField] Slider healthBar;
+    [SerializeField]public Transform movePoint;
+    [SerializeField]public LayerMask whatStopsMovement;
     public GameManager gameManager;
     public bool canHit;
     public bool canMove;
@@ -33,6 +35,7 @@ public class EnemyController : MonoBehaviour
         healthBar.maxValue = health;
         canHit = true;
         canMove = true;
+        movePoint.parent = null;
     }
 
     // Update is called once per frame
@@ -65,37 +68,47 @@ public class EnemyController : MonoBehaviour
     
    
     private void PlayerChase(){
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed*Time.deltaTime);
+
         Vector3 targetPos = player.transform.position;
 
         Vector3 pos = new Vector3(0,0,0);
-        if(Mathf.Abs(transform.position.x - player.transform.position.x) >= Mathf.Abs(transform.position.y - player.transform.position.y)){
-            if (transform.position.x <= player.transform.position.x){
-                pos += Vector3.right;
-            }
-            else if (transform.position.x > player.transform.position.x){
-                pos += Vector3.left;
-            }
-            else{
-                pos += Vector3.zero;
-            }
-
-        }
-
-        else{
+        if(Mathf.Abs(transform.position.x - player.transform.position.x) <= 0.05){
             if (transform.position.y <= player.transform.position.y){
                 pos += Vector3.up;
             }
             else if (transform.position.y > player.transform.position.y){
                 pos += Vector3.down;
             }
-            else{
-                pos += Vector3.zero;
+
+            if(!Physics2D.OverlapCircle(movePoint.position + pos, 0.2f, whatStopsMovement)){
+                movePoint.position = Vector3.MoveTowards(transform.position, transform.position + pos, moveSpeed * Time.deltaTime);
+            }
+            
+        }            
+            
+
+
+
+        else{
+            
+            if (transform.position.x <= player.transform.position.x){
+                pos += Vector3.right;
+            }
+            else if (transform.position.x > player.transform.position.x){
+                pos += Vector3.left;
             }
 
+            if(!Physics2D.OverlapCircle(movePoint.position + pos, 0.2f, whatStopsMovement)){
+                movePoint.position = Vector3.MoveTowards(transform.position, transform.position + pos, moveSpeed * Time.deltaTime);
+            }
+            
+
         }
+        
     
 
-        transform.position = Vector2.MoveTowards(transform.position, transform.position + pos, moveSpeed * Time.deltaTime);
+     
         if (pos != Vector3.zero){
             float angle = Mathf.Atan2(pos.y, pos.x)*Mathf.Rad2Deg - 90;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
