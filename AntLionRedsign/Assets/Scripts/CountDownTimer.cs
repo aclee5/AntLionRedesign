@@ -25,9 +25,9 @@ public class CountDownTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeFormats.Add(TimerFormats.Whole, "0");
-        timeFormats.Add(TimerFormats.TenthDecimal, "0.0");
-        timeFormats.Add(TimerFormats.HundredthDecimal, "0.00");
+        timeFormats.Add(TimerFormats.Whole, "0:00");
+        timeFormats.Add(TimerFormats.TenthDecimal, "0:00.0");
+        timeFormats.Add(TimerFormats.HundredthDecimal, "0:00.00");
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class CountDownTimer : MonoBehaviour
     }
     private void SetTimerText(){
         timerText.text = hasFormat ? currentTime.ToString(timeFormats[format]) : currentTime.ToString();
+        timerText.text = timerText.text + "s";
 
     }
 
