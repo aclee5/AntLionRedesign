@@ -75,15 +75,21 @@ public class EnemyController : MonoBehaviour
             else if (transform.position.x > player.transform.position.x){
                 pos += Vector3.left;
             }
+            else{
+                pos += Vector3.zero;
+            }
 
         }
 
-        if(Mathf.Abs(transform.position.x - player.transform.position.x) < Mathf.Abs(transform.position.y - player.transform.position.y)){
+        else{
             if (transform.position.y <= player.transform.position.y){
                 pos += Vector3.up;
             }
             else if (transform.position.y > player.transform.position.y){
                 pos += Vector3.down;
+            }
+            else{
+                pos += Vector3.zero;
             }
 
         }
