@@ -1050,7 +1050,6 @@ GameObject:
   - component: {fileID: 266678738}
   - component: {fileID: 266678737}
   - component: {fileID: 266678739}
-  - component: {fileID: 266678740}
   - component: {fileID: 266678741}
   m_Layer: 0
   m_Name: Player
@@ -1072,6 +1071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  isMoving: 0
+  input: {x: 0, y: 0}
 --- !u!212 &266678735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1195,20 +1196,6 @@ MonoBehaviour:
   coolDown: 2
   safeTime: 5
   onSafeTile: 0
---- !u!114 &266678740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266678733}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62d4563eb82392b4696973063db17936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  playerRigidbody2D: {fileID: 266678738}
 --- !u!114 &266678741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2891,7 +2878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
   landslideLength: 5
-  timeTillLandslide: 15
+  timeTillLandslide: 5
   spawnLocationX: 0
   spawnLocationY: 16
   countDownTimer: {fileID: 1910947136}
@@ -6468,9 +6455,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 1
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6628,8 +6615,9 @@ MonoBehaviour:
   agroRange: 7
   moveSpeed: 1.5
   health: 3
-  healthBar: {fileID: 1950108319}
+  healthBar: {fileID: 1950108318}
   gameManager: {fileID: 1315578687}
+  canHit: 0
   decisionTime: {x: -2, y: 2}
 --- !u!1 &2017826642
 GameObject:

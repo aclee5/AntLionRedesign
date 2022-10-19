@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float agroRange;
     [SerializeField] float moveSpeed;
     [SerializeField] int health;
-    [SerializeField] HealthBar healthBar;
+    [SerializeField] Slider healthBar;
     public GameManager gameManager;
+    public bool canHit;
 
     //random walk/wander: https://forum.unity.com/threads/making-npcs-wander-in-2d.524950/
 
@@ -27,7 +29,8 @@ public class EnemyController : MonoBehaviour
     {
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
         ChooseMoveDirection();
-        healthBar.SetMaxHealth(health);
+        healthBar.maxValue = health;
+        canHit = true;
     }
 
     // Update is called once per frame
@@ -45,20 +48,11 @@ public class EnemyController : MonoBehaviour
         }
 
         if (health <= 0){
+            SetEnemySpeed(0);
             gameManager.UpdateState(-1);   
             
         }
-        //float distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        // if(distToPlayer < agroRange){
-        //     //code to chase player
-        //     PlayerChase();
-        // }
-
-        // else{
-        //     //stop chasing player
-        //     StopPlayerChase();
-        // }
+     
     }
 
     private void PlayerChase(){
@@ -79,6 +73,10 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void SetEnemySpeed(float speed){
+        moveSpeed = speed;
+    }
+
 
 
     private void ChooseMoveDirection(){
@@ -88,9 +86,26 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle")){
-            health -= 1;
-            healthBar.SetHealth(health);           
+            if(canHit){
+                health -= 1;
+                healthBar.value = health;
+                canHit = false;
+            }
+            Debug.Log("Enemy Health" + healthBar.value);
+            
+                    
 
         }
    }
+
+   void OnTriggerExit2D(Collider2D collision){
+        if(collision.CompareTag("Obstacle")){
+            if(!canHit){
+                canHit = true;
+            
+            }
+                
+        }
+
+    }
 }
