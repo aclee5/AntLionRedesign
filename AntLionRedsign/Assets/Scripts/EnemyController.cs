@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     //random walk/wander: https://forum.unity.com/threads/making-npcs-wander-in-2d.524950/
 
     // A minimum and maximum time delay for taking a decision, choosing a direction to move in
-    public Vector2 decisionTime = new Vector2(-2, 2);
+    public Vector2 decisionTime = new Vector2(0, 10);
     private float decisionTimeCount = 0;
  
     // The possible directions that the object can move int, right, left, up, down, and zero for staying in place. I added zero twice to give a bigger chance if it happening than other directions
@@ -57,18 +57,49 @@ public class EnemyController : MonoBehaviour
                 
             }
 
+
         }
         
      
     }
-
+    
+   
     private void PlayerChase(){
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        Vector3 targetPos = player.transform.position;
+
+        Vector3 pos = new Vector3(0,0,0);
+        if(Mathf.Abs(transform.position.x - player.transform.position.x) >= Mathf.Abs(transform.position.y - player.transform.position.y)){
+            if (transform.position.x <= player.transform.position.x){
+                pos += Vector3.right;
+            }
+            else if (transform.position.x > player.transform.position.x){
+                pos += Vector3.left;
+            }
+
+        }
+
+        if(Mathf.Abs(transform.position.x - player.transform.position.x) < Mathf.Abs(transform.position.y - player.transform.position.y)){
+            if (transform.position.y <= player.transform.position.y){
+                pos += Vector3.up;
+            }
+            else if (transform.position.y > player.transform.position.y){
+                pos += Vector3.down;
+            }
+
+        }
+    
+
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + pos, moveSpeed * Time.deltaTime);
+        if (pos != Vector3.zero){
+            float angle = Mathf.Atan2(pos.y, pos.x)*Mathf.Rad2Deg - 90;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
 
     }
 
     private void StopPlayerChase(){
-       transform.position = Vector2.MoveTowards(transform.position, moveDirections[currentMoveDirection], moveSpeed*Time.deltaTime);
+        Vector2 newPos = moveDirections[currentMoveDirection]* Random.Range(0, 5);
+        transform.position = Vector2.MoveTowards(transform.position, newPos, moveSpeed*Time.deltaTime);
 
         if(decisionTimeCount > 0) {
             decisionTimeCount -= Time.deltaTime;
@@ -88,6 +119,7 @@ public class EnemyController : MonoBehaviour
 
     private void ChooseMoveDirection(){
         currentMoveDirection = Mathf.FloorToInt(Random.Range(0, moveDirections.Length));
+
     }
 
 
