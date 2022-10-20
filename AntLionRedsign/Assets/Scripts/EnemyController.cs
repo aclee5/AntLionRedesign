@@ -73,12 +73,12 @@ public class EnemyController : MonoBehaviour
         Vector3 targetPos = player.transform.position;
 
         Vector3 pos = new Vector3(0,0,0);
-        if(Mathf.Abs(transform.position.x - player.transform.position.x) <= 0.05){
-            if (transform.position.y <= player.transform.position.y){
-                pos += Vector3.up;
+        if(Mathf.Abs(transform.position.y - player.transform.position.y) <= 0.05){
+            if (transform.position.x <= player.transform.position.x){
+                pos += Vector3.right;
             }
-            else if (transform.position.y > player.transform.position.y){
-                pos += Vector3.down;
+            else if (transform.position.x > player.transform.position.x){
+                pos += Vector3.left;
             }
 
             if(!Physics2D.OverlapCircle(movePoint.position + pos, 0.2f, whatStopsMovement)){
@@ -92,11 +92,13 @@ public class EnemyController : MonoBehaviour
 
         else{
             
-            if (transform.position.x <= player.transform.position.x){
-                pos += Vector3.right;
+
+
+             if (transform.position.y <= player.transform.position.y){
+                pos += Vector3.up;
             }
-            else if (transform.position.x > player.transform.position.x){
-                pos += Vector3.left;
+            else if (transform.position.y > player.transform.position.y){
+                pos += Vector3.down;
             }
 
             if(!Physics2D.OverlapCircle(movePoint.position + pos, 0.2f, whatStopsMovement)){
