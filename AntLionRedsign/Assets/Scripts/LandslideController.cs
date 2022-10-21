@@ -10,17 +10,24 @@ public class LandslideController : MonoBehaviour
     [SerializeField] private float timeTillLandslide;
     [SerializeField] private float spawnLocationX;
     [SerializeField] private float spawnLocationY;
+
     [SerializeField] private CountDownTimer countDownTimer;
     public bool occuring = true;
     
-    private Vector2 screenBoundary;  
+    private Vector2 screenBoundary;
+    private Vector2 mapDimensions; 
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        countDownTimer.setTime(landslideLength);
         screenBoundary = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        mapDimensions = FindObjectOfType<MapGenerator>().getDimensions();
+        spawnLocationX = mapDimensions.x/2;
+        spawnLocationY = mapDimensions.y + 3;
+
+        countDownTimer.setTime(timeTillLandslide);
 
       
         StartCoroutine(TriggerLandslide());
@@ -45,10 +52,14 @@ public class LandslideController : MonoBehaviour
 
    IEnumerator TriggerLandslide(){    
         while(occuring){
-            countDownTimer.setTime(timeTillLandslide);
-            yield return new WaitForSeconds(timeTillLandslide);
-            spawnLandslide();
-            yield return new WaitForSeconds(landslideLength);
+            if(countDownTimer.currentTime <= 0){
+                spawnLandslide();
+                yield return new WaitForSeconds(landslideLength);
+                countDownTimer.setTime(timeTillLandslide); 
+
+            }           
+            yield return null;
+            
 
         }
 
