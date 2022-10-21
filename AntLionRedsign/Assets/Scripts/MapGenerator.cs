@@ -65,6 +65,10 @@ public class MapGenerator : MonoBehaviour
         return new Vector2(width, height);
     }
 
+    public int getColonyHeight(){
+        return colonyHeightLoc;
+    }
+
     private Tile DecideTile(int number){
         Tile tileToReturn;
         //probability of safetey Zones 
