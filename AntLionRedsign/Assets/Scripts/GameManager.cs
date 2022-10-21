@@ -56,7 +56,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void LevelComplete(){
-        Debug.Log("Level won");
+        FindObjectOfType<EnemyController>().canMove = false;
+        FindObjectOfType<LandslideController>().occuring = false;
+        // Debug.Log("Level won");        
         completeLevelUI.SetActive(true);
         hudUI.SetActive(false);
 
