@@ -19,7 +19,8 @@ public class MapGenerator : MonoBehaviour
 
     [Header ("Tiles to Use")]
     public Tile barrier;
-    public Tile safetyTile;
+    public Tile safetyTileHorizontal;
+    public Tile safetyTileVertical; 
     public Tile winTile; 
     public Tile tileNoValue;
     public Tile tileNegative1;
@@ -83,7 +84,14 @@ public class MapGenerator : MonoBehaviour
         Tile tileToReturn;
         //probability of safetey Zones 
         if (number <= probabilityOfSafety){
-            tileToReturn = safetyTile;
+            float burrowDirection = Random.Range(0, 2);
+            if (burrowDirection < 1){
+                tileToReturn = safetyTileHorizontal;
+            }
+            else{
+                tileToReturn = safetyTileVertical;
+            }
+            
         }
         //probablility of positive tiles
         else if (number > probabilityOfSafety && number <= probabilityOfPositive){

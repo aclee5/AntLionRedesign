@@ -924,7 +924,8 @@ MonoBehaviour:
   contentGrid: {fileID: 510230965}
   barrierGrid: {fileID: 2131942593}
   barrier: {fileID: 11400000, guid: 03e29fb65d92df0449d9ef9c713cbd80, type: 2}
-  safetyTile: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
+  safetyTileHorizontal: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
+  safetyTileVertical: {fileID: 0}
   winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
   tileNoValue: {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
   tileNegative1: {fileID: 11400000, guid: 6faa4102a5df83e45bae32b1912cdc2c, type: 2}
@@ -936,6 +937,10 @@ MonoBehaviour:
   probabilityOfNegative: 60
   probabilityOfPositive: 15
   probabilityOfSafety: 5
+  negative1: 0.6
+  negative2: 0.8
+  positive1: 0.6
+  positive2: 0.9
 --- !u!4 &158777388
 Transform:
   m_ObjectHideFlags: 0
