@@ -10,4 +10,5 @@ public class TileData : ScriptableObject
 
     public float timeAdd;
     public bool safe;
+    public bool win; 
 }

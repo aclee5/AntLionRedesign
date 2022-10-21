@@ -5,8 +5,13 @@ using UnityEngine.Tilemaps;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] private int width, height;
-
+    [SerializeField] private int width = 16;
+    [SerializeField] private int height;
+    
+    public float colonySpaceHeightPercentage = 0.25f;
+    private int colonySpaceOpeningWalls; 
+    private int colonyHeightLoc;   
+    
 
     public Tilemap contentGrid;
     public Tilemap barrierGrid;
@@ -23,35 +28,41 @@ public class MapGenerator : MonoBehaviour
     public Tile tilePositive3;
     public int probabilityOfNegative = 60;
     public int probabilityOfPositive = 15;
-    public int probabilityOfSafety = 5;
+    public int probabilityOfSafety = 3;
     
-
-
 
    
 
     // Start is called before the first frame update
     void Start()
     {
+        colonySpaceOpeningWalls = (int)(width*0.75)/2;
+        colonyHeightLoc = (int)(height*colonySpaceHeightPercentage);   
 
         for (int x = 0; x < width; x ++){
             for(int y = 0; y < height; y ++){
                 
-                if((x == 0 || x == (width - 1)) || (y == 0 || y == (height - 1))){
+                if(((x == 0 || x == (width - 1)) || (y == 0)) || ((y == (height - colonyHeightLoc)) && ((x < colonySpaceOpeningWalls) || (x > (width - colonySpaceOpeningWalls))))){
                     barrierGrid.SetTile(new Vector3Int(x,y,0), barrier);
+                }
+
+                else if (y > (height - colonyHeightLoc)){
+                    contentGrid.SetTile(new Vector3Int(x,y,0), winTile); 
                 }
 
                 else{
                     int decider = (int)Random.Range(0, 100);
                     contentGrid.SetTile(new Vector3Int(x,y,0), DecideTile(decider));
                 }
-
-
-                
+  
 
             }
         }
         
+    }
+
+    public Vector2 getDimensions(){
+        return new Vector2(width, height);
     }
 
     private Tile DecideTile(int number){
@@ -72,6 +83,7 @@ public class MapGenerator : MonoBehaviour
                 tileToReturn = tilePositive3;
             }
         }
+        //probability of negative tiles 
         else if(number > probabilityOfPositive && number <= probabilityOfNegative){
             if (number < (int)(probabilityOfNegative*0.6)){
                 tileToReturn = tileNegative2;
@@ -89,15 +101,12 @@ public class MapGenerator : MonoBehaviour
             tileToReturn = tileNoValue;
         }
 
-        
-        
-        //probability of negative tiles 
-
 
 
         return tileToReturn;
 
     }
+
 
    
 }

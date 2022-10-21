@@ -42,7 +42,13 @@ public class PlayerCollision : MonoBehaviour
    void Start(){
       Vector3Int mapTile = mapManager.map.WorldToCell(transform.position);
       currTile = mapManager.map.GetTile(mapTile);
-      onSafeTile = false; 
+      if(mapManager.dataFromTiles[currTile].safe){
+         onSafeTile = true;
+      }
+      else{
+         onSafeTile = false; 
+      }
+      
 
    }
 
@@ -65,11 +71,15 @@ public class PlayerCollision : MonoBehaviour
          if(onTile != currTile){
             float timeAdd = mapManager.dataFromTiles[onTile].timeAdd;
             onSafeTile = mapManager.dataFromTiles[onTile].safe;
+            if(mapManager.dataFromTiles[onTile].win){
+               Debug.Log("winning");
+               FindObjectOfType<GameManager>().UpdateState(-1);
+            }
             if(onSafeTile && (onSafeTile != pastSafeTile)){
                safteyTimer.setTime(safeTime);
             
             }
-            if(!onSafeTile && (onSafeTile != pastSafeTile) ){
+            else if(!onSafeTile && (onSafeTile != pastSafeTile) ){
                safteyTimer.setTime(0);
             }    
             countDownTimer.addTime(timeAdd);            

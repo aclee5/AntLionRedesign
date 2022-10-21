@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
   timeAdd: 0
   safe: 0
+  win: 1
