@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TimeDecreaseTwo
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: b4382a66eade4614c9ffd5242a76391b, type: 2}
+  - {fileID: 11400000, guid: 8376edfa2dfb01141bee31db9e0bf3f2, type: 2}
   timeAdd: -2
-  timeDecrease: 0
+  safe: 0
+  win: 0

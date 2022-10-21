@@ -925,15 +925,15 @@ MonoBehaviour:
   barrierGrid: {fileID: 2131942593}
   barrier: {fileID: 11400000, guid: 03e29fb65d92df0449d9ef9c713cbd80, type: 2}
   safetyTileHorizontal: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
-  safetyTileVertical: {fileID: 0}
+  safetyTileVertical: {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
   winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
-  tileNoValue: {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
-  tileNegative1: {fileID: 11400000, guid: 6faa4102a5df83e45bae32b1912cdc2c, type: 2}
-  tileNegative2: {fileID: 11400000, guid: b4382a66eade4614c9ffd5242a76391b, type: 2}
-  tileNegative3: {fileID: 11400000, guid: ada17954cf095f24fbe2cd676fd9b46a, type: 2}
-  tilePositive1: {fileID: 11400000, guid: 15be73a7bb3c48645a553554968da9d9, type: 2}
-  tilePositive2: {fileID: 11400000, guid: b4e1a99c220a3774ea9593d09ace9d0f, type: 2}
-  tilePositive3: {fileID: 11400000, guid: 07cc407fb93ea7d4b93cc2ad88a57251, type: 2}
+  tileNoValue: {fileID: 11400000, guid: e447733f9a5a97a44acb16a2536eede2, type: 2}
+  tileNegative1: {fileID: 11400000, guid: 7eda15da53804be45a02b6ac4800cc95, type: 2}
+  tileNegative2: {fileID: 11400000, guid: 8376edfa2dfb01141bee31db9e0bf3f2, type: 2}
+  tileNegative3: {fileID: 11400000, guid: a5bf4a75079489047bb2eb9ec315529b, type: 2}
+  tilePositive1: {fileID: 11400000, guid: 325116df55daef64cb17938904f77212, type: 2}
+  tilePositive2: {fileID: 11400000, guid: 324bd4cac6ab7b0409ed6e9aaf8556bb, type: 2}
+  tilePositive3: {fileID: 11400000, guid: 6d00ddfcaf7866446ae168c5b35aac15, type: 2}
   probabilityOfNegative: 60
   probabilityOfPositive: 15
   probabilityOfSafety: 5
@@ -7061,7 +7061,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c47283dcbe58d34f883c3ec0a1bcee6, type: 2}
   - {fileID: 11400000, guid: 8ad4d26bd5c43eb42b2b6c0f57000541, type: 2}
   - {fileID: 11400000, guid: 0c6282d000a1fc645944a71eefdefc1c, type: 2}
-  - {fileID: 11400000, guid: 4fb51573ab1012e499e06d6fe7aaf1a3, type: 2}
+  - {fileID: 11400000, guid: a9d5d7f6d31b9f645ab1b9fcd5ea29a5, type: 2}
+  - {fileID: 11400000, guid: 866ec5e890b01f54b89a0cb6b4697a34, type: 2}
   - {fileID: 11400000, guid: 63b945c112a16e44a8201ccf5ba54500, type: 2}
 --- !u!4 &2017826644
 Transform:
