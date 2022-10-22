@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
    [SerializeField] private CountDownTimer safteyTimer;
    [SerializeField] private float coolDown;
    [SerializeField] private float safeTime;
+   public Transform floatingNumberSpawnPoint;
 
    public GameObject floatingAddedTime;
 
@@ -85,7 +86,7 @@ public class PlayerCollision : MonoBehaviour
                safteyTimer.setTime(0);
             }
 
-            
+
             if(timeAdd != 0){
                string timeAdded;
                float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
@@ -98,7 +99,7 @@ public class PlayerCollision : MonoBehaviour
 
                }
                
-               Instantiate(floatingAddedTime, new Vector3(transform.position.x, yLocation, transform.position.z), Quaternion.identity);
+               Instantiate(floatingAddedTime, floatingNumberSpawnPoint.transform.position, Quaternion.identity);
                TimeAddText addText = floatingAddedTime.GetComponent<TimeAddText>();
 
                addText.SetText(timeAdded);

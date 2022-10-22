@@ -1215,6 +1215,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 973335185}
+  - {fileID: 334771407}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1272,6 +1273,7 @@ MonoBehaviour:
   safteyTimer: {fileID: 1330236668}
   coolDown: 2
   safeTime: 5
+  floatingNumberSpawnPoint: {fileID: 334771407}
   floatingAddedTime: {fileID: 7618355062515046572, guid: 69331f634c49f4c4582d8893884bace8, type: 3}
   onSafeTile: 0
 --- !u!114 &266678741
@@ -1418,6 +1420,37 @@ MonoBehaviour:
   player: {fileID: 266678736}
   map: {fileID: 158777387}
   slider: {fileID: 320623210}
+--- !u!1 &334771406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334771407}
+  m_Layer: 0
+  m_Name: floatingNumberSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &334771407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334771406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 266678736}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390640591
 GameObject:
   m_ObjectHideFlags: 0
