@@ -1071,9 +1071,13 @@ MonoBehaviour:
   tilePositive1: {fileID: 11400000, guid: 325116df55daef64cb17938904f77212, type: 2}
   tilePositive2: {fileID: 11400000, guid: 324bd4cac6ab7b0409ed6e9aaf8556bb, type: 2}
   tilePositive3: {fileID: 11400000, guid: 6d00ddfcaf7866446ae168c5b35aac15, type: 2}
+  powerUp: {fileID: 843765857984888130, guid: 88f5953551d88d34683147d3802048a8, type: 3}
+  powerDown: {fileID: 3029058438012812800, guid: 1105f086bdbbf9943a3b25bf5d087cf5, type: 3}
   probabilityOfNegative: 60
   probabilityOfPositive: 15
   probabilityOfSafety: 5
+  denominatorofPickup: 10
+  denominatorofPowerUp: 3
   negative1: 0.6
   negative2: 0.8
   positive1: 0.6
@@ -1731,7 +1735,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2104813885, guid: 38846e0c702bd59458221673a21915f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9158,7 +9162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1127093809, guid: 74f5c1d6efcd72048ab7365f0d58e97b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

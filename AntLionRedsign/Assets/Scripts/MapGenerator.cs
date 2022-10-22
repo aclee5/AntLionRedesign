@@ -32,10 +32,15 @@ public class MapGenerator : MonoBehaviour
     public Tile tilePositive2;
     public Tile tilePositive3;
 
+    public GameObject powerUp;
+    public GameObject powerDown; 
+
     [Header("Probabilities of Tile out of 100")]
     public int probabilityOfNegative = 60;
     public int probabilityOfPositive = 15;
     public int probabilityOfSafety = 3;
+    public int denominatorofPickup = 10;
+    public int denominatorofPowerUp = 3;
     [Header ("Probabilities of Value (maximum 1.0)*** Only for 1 & 2 Values the rest is 3")]
     public float negative1 = 0.6f;
     public float negative2 = 0.8f;
@@ -81,6 +86,17 @@ public class MapGenerator : MonoBehaviour
                 else{
                     int decider = (int)Random.Range(0, 100);
                     contentGrid.SetTile(new Vector3Int(x,y,0), DecideTile(decider));
+
+                    int hasPickUpItem = (int)Random.Range(0, denominatorofPickup);
+                    if(hasPickUpItem == 1){
+                        if ((int)Random.Range(0, denominatorofPowerUp) < 2){
+                            Instantiate(powerUp, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                        }
+                        else{
+                            Instantiate(powerDown, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                        }
+                    }
+
                 }
   
 

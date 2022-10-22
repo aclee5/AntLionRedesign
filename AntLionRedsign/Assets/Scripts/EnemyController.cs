@@ -13,15 +13,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Slider healthBar;
     [SerializeField]public Transform movePoint;
     [SerializeField]public LayerMask whatStopsMovement;
+    private SpriteRenderer sprite;
     public GameManager gameManager;
     public bool canHit;
     public bool canMove;
-
+    public bool tempStop;
     //random walk/wander: https://forum.unity.com/threads/making-npcs-wander-in-2d.524950/
 
     // A minimum and maximum time delay for taking a decision, choosing a direction to move in
     public Vector2 decisionTime = new Vector2(0, 10);
     private float decisionTimeCount = 0;
+    public float freezeLength = 3;
+    private float freezeTimer;
  
     // The possible directions that the object can move int, right, left, up, down, and zero for staying in place. I added zero twice to give a bigger chance if it happening than other directions
     private Vector2[] moveDirections = new Vector2[] { Vector2.right, Vector2.left, Vector2.up, Vector2.down};
@@ -32,17 +35,21 @@ public class EnemyController : MonoBehaviour
     {
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
         ChooseMoveDirection();
+        sprite = GetComponent<SpriteRenderer>();
         healthBar.maxValue = health;
         canHit = true;
         canMove = true;
+        tempStop = false; 
         movePoint.parent = null;
+        freezeTimer = freezeLength;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if(canMove){
+        if(canMove && !tempStop){
             if(playerCol.onSafeTile){
                 StopPlayerChase();
                 
@@ -59,6 +66,25 @@ public class EnemyController : MonoBehaviour
                 gameManager.UpdateState(-3);   
                 
             }
+
+
+        }
+
+        if (tempStop){
+            if(freezeTimer<= 0){
+                tempStop = false;
+                freezeTimer = freezeLength;
+                sprite.color = Color.white;
+                
+            }
+            else{
+                freezeTimer -= Time.deltaTime;
+                sprite.color = Color.blue;
+
+            }
+
+            
+                
 
 
         }
@@ -134,6 +160,10 @@ public class EnemyController : MonoBehaviour
 
     public void SetEnemySpeed(float speed){
         moveSpeed = speed;
+    }
+
+    public float GetEnemySpeed(){
+        return moveSpeed;
     }
 
 
