@@ -40,6 +40,23 @@ public class PlayerCollision : MonoBehaviour
             FindObjectOfType<GameManager>().UpdateState(-2);   
 
         }
+
+        if(collision.CompareTag("PickUp")){
+            Debug.Log("Hit This");
+            if(collision.GetComponent<PickupItem>().isPowerUp){
+               // FindObjectOfType<EnemyController>().SetEnemySpeed(0); 
+               FindObjectOfType<EnemyController>().tempStop = true; 
+            }
+
+            else{
+               float currentSpeed = FindObjectOfType<EnemyController>().GetEnemySpeed();
+               float addSpeed = currentSpeed +1;
+               FindObjectOfType<EnemyController>().SetEnemySpeed(addSpeed);
+               
+            }
+            collision.GetComponent<PickupItem>().DestroyItem();
+            
+        }
    }
 
    void Start(){
