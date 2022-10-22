@@ -17,7 +17,8 @@ public class LandslideController : MonoBehaviour
     private Vector2 screenBoundary;
     private Vector2 mapDimensions; 
 
-
+    //audio 
+    public AudioSource landslideSound;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,8 @@ public class LandslideController : MonoBehaviour
         Debug.Log("Landslide");
         //Find landslide countdown timer to reset
         
+        //plays sfx
+        landslideSound.Play();
         
 
     }

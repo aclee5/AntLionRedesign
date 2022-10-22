@@ -20,7 +20,9 @@ public class PlayerCollision : MonoBehaviour
    private bool pastSafeTile;
    public bool onSafeTile;
    
-   
+   //audio sources 
+   public AudioSource positiveTileSound; 
+   public AudioSource negativeTileSound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy")){
@@ -92,11 +94,15 @@ public class PlayerCollision : MonoBehaviour
                float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
                if(timeAdd > 0){
                   timeAdded = "+"+ timeAdd.ToString("0");
+                  
+                  // positive sfx play 
+                  positiveTileSound.Play(); 
 
                }
                else{
                    timeAdded = timeAdd.ToString("0");
-
+                  //negative sfx play 
+                  negativeTileSound.Play();
                }
                
                Instantiate(floatingAddedTime, floatingNumberSpawnPoint.transform.position, Quaternion.identity);
