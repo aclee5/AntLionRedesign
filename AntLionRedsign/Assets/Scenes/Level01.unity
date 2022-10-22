@@ -1830,7 +1830,6 @@ MonoBehaviour:
   moveSpeed: 5
   movePoint: {fileID: 973335185}
   mapManager: {fileID: 2017826643}
-  contentMap: {fileID: 0}
   startTile: {fileID: 11400000, guid: e447733f9a5a97a44acb16a2536eede2, type: 2}
   whatStopsMovement:
     serializedVersion: 2
