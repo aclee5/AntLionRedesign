@@ -11,4 +11,9 @@ public class RestartButtonUI : MonoBehaviour
     public void BeginGame(){
         FindObjectOfType<GameManager>().StartGame();
     }
+
+    public void BackHome(){
+        FindObjectOfType<GameManager>().ReturnHome();
+
+    }
 }

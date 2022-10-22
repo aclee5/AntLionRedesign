@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public GameObject completeLevelUI;
     public GameObject hudUI;
     public GameObject gameOverUI;
+    public GameObject killedBeetleUI;
     
     public int state;
+    public const int WINKILL = -3;
     public const int WIN = -1;
     public const int LOSE = -2;
     public const int START = 0;
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
             case WIN:
                 LevelComplete();
                 break;
+
+            case WINKILL:
+                BeetleDead();
+                break;
+
             case LOSE:
                 EndGame();
                 break;
@@ -64,6 +71,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void BeetleDead(){
+        FindObjectOfType<EnemyController>().canMove = false;
+        FindObjectOfType<LandslideController>().occuring = false;  
+        killedBeetleUI.SetActive(true);
+        hudUI.SetActive(false);
+
+    }
+
+
     public void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -76,6 +92,10 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
         hudUI.SetActive(false);
 
+    }
+
+    public void ReturnHome(){
+        SceneManager.LoadScene("StartScreen");
     }
 }
 

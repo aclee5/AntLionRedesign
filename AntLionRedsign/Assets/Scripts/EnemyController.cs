@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
             if (health <= 0){
                 SetEnemySpeed(0);
                 canMove = false;
-                gameManager.UpdateState(-1);   
+                gameManager.UpdateState(-3);   
                 
             }
 
