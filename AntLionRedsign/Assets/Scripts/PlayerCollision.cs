@@ -13,6 +13,8 @@ public class PlayerCollision : MonoBehaviour
    [SerializeField] private float coolDown;
    [SerializeField] private float safeTime;
 
+   public GameObject floatingAddedTime;
+
    private TileBase currTile;
    private bool pastSafeTile;
    public bool onSafeTile;
@@ -81,7 +83,32 @@ public class PlayerCollision : MonoBehaviour
             }
             else if(!onSafeTile && (onSafeTile != pastSafeTile) ){
                safteyTimer.setTime(0);
-            }    
+            }
+
+            
+            if(timeAdd != 0){
+               string timeAdded;
+               float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
+               if(timeAdd > 0){
+                  timeAdded = "+"+ timeAdd.ToString("0") + " s";
+
+               }
+               else{
+                   timeAdded = timeAdd.ToString("0") + " s";
+
+               }
+               
+               Instantiate(floatingAddedTime, new Vector3(transform.position.x, yLocation, transform.position.z), Quaternion.identity);
+               TimeAddText addText = floatingAddedTime.GetComponent<TimeAddText>();
+
+               addText.SetText(timeAdded);
+               
+   
+
+            }
+            
+            
+
             countDownTimer.addTime(timeAdd);            
             currTile = onTile;
          } 

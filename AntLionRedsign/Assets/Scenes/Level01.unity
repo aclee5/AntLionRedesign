@@ -925,7 +925,7 @@ MonoBehaviour:
   barrierGrid: {fileID: 2131942593}
   barrier: {fileID: 11400000, guid: 03e29fb65d92df0449d9ef9c713cbd80, type: 2}
   safetyTileHorizontal: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
-  safetyTileVertical: {fileID: 0}
+  safetyTileVertical: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
   winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
   tileNoValue: {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
   tileNegative1: {fileID: 11400000, guid: 6faa4102a5df83e45bae32b1912cdc2c, type: 2}
@@ -1272,6 +1272,7 @@ MonoBehaviour:
   safteyTimer: {fileID: 1330236668}
   coolDown: 2
   safeTime: 5
+  floatingAddedTime: {fileID: 7618355062515046572, guid: 69331f634c49f4c4582d8893884bace8, type: 3}
   onSafeTile: 0
 --- !u!114 &266678741
 MonoBehaviour:
@@ -1349,7 +1350,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 37, y: 1}
-  m_SizeDelta: {x: 464.33557, y: 20}
+  m_SizeDelta: {x: 250, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320623210
 MonoBehaviour:
@@ -6242,15 +6243,15 @@ RectTransform:
   m_GameObject: {fileID: 1758366902}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 206828781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.1000061, y: 0.10000038}
+  m_AnchoredPosition: {x: 0, y: 0.099999905}
   m_SizeDelta: {x: 30.0074, y: 9.9041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758366904
