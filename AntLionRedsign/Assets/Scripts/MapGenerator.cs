@@ -18,6 +18,8 @@ public class MapGenerator : MonoBehaviour
     public Tilemap barrierGrid;
 
     [Header ("Tiles to Use")]
+    public Tile barrierL;
+    public Tile barrierR;
     public Tile barrier;
     public Tile safetyTileHorizontal;
     public Tile safetyTileVertical; 
@@ -52,9 +54,24 @@ public class MapGenerator : MonoBehaviour
 
         for (int x = 0; x < width; x ++){
             for(int y = 0; y < height; y ++){
-                
-                if(((x == 0 || x == (width - 1)) || (y == 0)) || ((y == (height - colonyHeightLoc)) && ((x < colonySpaceOpeningWalls) || (x > (width - colonySpaceOpeningWalls))))){
-                    barrierGrid.SetTile(new Vector3Int(x,y,0), barrier);
+
+               // if (((x == 0 || x == (width - 1)) || (y == 0)) || ((y == (height - colonyHeightLoc)) && ((x < colonySpaceOpeningWalls) || (x > (width - colonySpaceOpeningWalls)))))
+               // {
+               //     barrierGrid.SetTile(new Vector3Int(x, y, 0), barrier);
+               // }
+
+                if (x == 0 || y == 0){
+                    barrierGrid.SetTile(new Vector3Int(x,y,0), barrierL);
+                }
+
+                else if (x == (width - 1))
+                {
+                    barrierGrid.SetTile(new Vector3Int(x, y, 0), barrierR);
+                }
+
+                else if (((y == (height - colonyHeightLoc)) && ((x < colonySpaceOpeningWalls) || (x > (width - colonySpaceOpeningWalls)))))
+                {
+                    barrierGrid.SetTile(new Vector3Int(x, y, 0), barrier);
                 }
 
                 else if (y > (height - colonyHeightLoc)){
