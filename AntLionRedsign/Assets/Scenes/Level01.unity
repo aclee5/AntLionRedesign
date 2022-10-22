@@ -1059,8 +1059,8 @@ MonoBehaviour:
   contentGrid: {fileID: 510230965}
   barrierGrid: {fileID: 2131942593}
   barrier: {fileID: 11400000, guid: 03e29fb65d92df0449d9ef9c713cbd80, type: 2}
-  safetyTileHorizontal: {fileID: 11400000, guid: 974cf980d97478447bb3699a452135c5, type: 2}
-  safetyTileVertical: {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
+  safetyTileHorizontal: {fileID: 11400000, guid: f9cb6d80ffa871b4c9086645031633fb, type: 2}
+  safetyTileVertical: {fileID: 11400000, guid: eacedbf71c493d34388e1ecff3158277, type: 2}
   winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
   tileNoValue: {fileID: 11400000, guid: e447733f9a5a97a44acb16a2536eede2, type: 2}
   tileNegative1: {fileID: 11400000, guid: 7eda15da53804be45a02b6ac4800cc95, type: 2}
@@ -1830,7 +1830,6 @@ MonoBehaviour:
   moveSpeed: 5
   movePoint: {fileID: 973335185}
   mapManager: {fileID: 2017826643}
-  contentMap: {fileID: 0}
   startTile: {fileID: 11400000, guid: e447733f9a5a97a44acb16a2536eede2, type: 2}
   whatStopsMovement:
     serializedVersion: 2

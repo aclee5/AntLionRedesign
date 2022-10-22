@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: VerticalHideData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
+  - {fileID: 11400000, guid: eacedbf71c493d34388e1ecff3158277, type: 2}
   timeAdd: 0
   safe: 1
   win: 0
