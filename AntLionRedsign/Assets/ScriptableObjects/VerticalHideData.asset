@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5d3f4db8fcb45f44a72f010211cac4f, type: 3}
-  m_Name: TimeAddThree
+  m_Name: VerticalHideData
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: 6d00ddfcaf7866446ae168c5b35aac15, type: 2}
-  timeAdd: 3
-  safe: 0
+  - {fileID: 11400000, guid: 4a4eb86488fb86f49b28c5e18c57c33b, type: 2}
+  timeAdd: 0
+  safe: 1
   win: 0
+  horizontalEntrance: 0
+  verticalEntrace: 1
