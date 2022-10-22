@@ -8,6 +8,7 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField]public float moveSpeed; 
     [SerializeField]public Transform movePoint;
     [SerializeField] public MapManager mapManager;
+    [SerializeField] public Tile startTile; 
     [SerializeField]public LayerMask whatStopsMovement;
     private bool canMove;
 
@@ -16,6 +17,9 @@ public class PlayerController2 : MonoBehaviour
     {
         movePoint.parent = null;
         canMove = true;
+        Vector3Int startTileCoord = mapManager.map.WorldToCell(transform.position);
+        mapManager.map.SetTile(startTileCoord, startTile); 
+        
     }
 
     // Update is called once per frame
