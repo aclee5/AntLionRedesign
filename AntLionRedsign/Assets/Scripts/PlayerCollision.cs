@@ -23,7 +23,7 @@ public class PlayerCollision : MonoBehaviour
    
 
    private void OnCollisionEnter2D(Collision2D collision){
-      if(collision.gameObject.CompareTag("Enemy")){
+      if(collision.gameObject.CompareTag("Enemy") && !onSafeTile){
          Debug.Log("Hit!");
          FindObjectOfType<GameManager>().UpdateState(-2);
 
