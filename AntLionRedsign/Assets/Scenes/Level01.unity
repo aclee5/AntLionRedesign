@@ -1603,50 +1603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447196150}
   m_CullTransparentMesh: 1
---- !u!1 &474489856
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474489857}
-  - component: {fileID: 474489858}
-  m_Layer: 0
-  m_Name: cm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &474489857
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474489856}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474489858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474489856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &483173900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,8 +1841,7 @@ Transform:
   m_LocalPosition: {x: 8.5, y: 8.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 474489857}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3023,12 +2978,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1830255132}
+  timerTitle: {fileID: 245548512}
   currentTime: 0
   countDown: 1
   hasLimit: 1
   timerLimit: 0
   hasFormat: 1
   format: 0
+  baseColor: {r: 1, g: 0, b: 0.5330343, a: 1}
+  accentColor: {r: 0, g: 0.07855177, b: 1, a: 1}
 --- !u!4 &1330236669
 Transform:
   m_ObjectHideFlags: 0
@@ -6760,12 +6718,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1500924942}
+  timerTitle: {fileID: 1693355350}
   currentTime: 5
   countDown: 1
   hasLimit: 1
   timerLimit: 0
   hasFormat: 1
   format: 0
+  baseColor: {r: 0, g: 0, b: 0, a: 1}
+  accentColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1910947137
 Transform:
   m_ObjectHideFlags: 0
