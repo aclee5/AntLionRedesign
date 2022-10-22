@@ -1945,6 +1945,7 @@ MonoBehaviour:
   onSafeTile: 0
   positiveTileSound: {fileID: 96366459}
   negativeTileSound: {fileID: 1478861865}
+  burrowSound: {fileID: 1499508343}
 --- !u!114 &266678741
 MonoBehaviour:
   m_ObjectHideFlags: 0

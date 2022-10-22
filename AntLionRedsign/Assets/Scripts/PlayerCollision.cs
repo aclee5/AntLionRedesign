@@ -23,6 +23,7 @@ public class PlayerCollision : MonoBehaviour
    //audio sources 
    public AudioSource positiveTileSound; 
    public AudioSource negativeTileSound;
+   public AudioSource burrowSound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy")){
@@ -49,6 +50,8 @@ public class PlayerCollision : MonoBehaviour
       currTile = mapManager.map.GetTile(mapTile);
       if(mapManager.dataFromTiles[currTile].safe){
          onSafeTile = true;
+
+        
       }
       else{
          onSafeTile = false; 
@@ -80,7 +83,9 @@ public class PlayerCollision : MonoBehaviour
                Debug.Log("winning");
                FindObjectOfType<GameManager>().UpdateState(-1);
             }
-            if(onSafeTile && (onSafeTile != pastSafeTile)){
+            if(onSafeTile && (onSafeTile != pastSafeTile)){ 
+               //play sfx for burrow 
+               burrowSound.Play();
                safteyTimer.setTime(safeTime);
             
             }
