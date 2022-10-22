@@ -17,3 +17,5 @@ MonoBehaviour:
   timeAdd: 0
   safe: 1
   win: 0
+  horizontalEntrance: 1
+  verticalEntrace: 0

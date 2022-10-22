@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   movePoint: {fileID: 973335185}
+  mapManager: {fileID: 2017826643}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 128
