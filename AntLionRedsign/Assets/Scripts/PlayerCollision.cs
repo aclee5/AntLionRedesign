@@ -20,7 +20,10 @@ public class PlayerCollision : MonoBehaviour
    private bool pastSafeTile;
    public bool onSafeTile;
    
-   
+   //audio sources 
+   public AudioSource positiveTileSound; 
+   public AudioSource negativeTileSound;
+   public AudioSource burrowSound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy") && !onSafeTile){
@@ -64,6 +67,8 @@ public class PlayerCollision : MonoBehaviour
       currTile = mapManager.map.GetTile(mapTile);
       if(mapManager.dataFromTiles[currTile].safe){
          onSafeTile = true;
+
+        
       }
       else{
          onSafeTile = false; 
@@ -95,7 +100,9 @@ public class PlayerCollision : MonoBehaviour
                Debug.Log("winning");
                FindObjectOfType<GameManager>().UpdateState(-1);
             }
-            if(onSafeTile && (onSafeTile != pastSafeTile)){
+            if(onSafeTile && (onSafeTile != pastSafeTile)){ 
+               //play sfx for burrow 
+               burrowSound.Play();
                safteyTimer.setTime(safeTime);
             
             }
@@ -109,11 +116,15 @@ public class PlayerCollision : MonoBehaviour
                float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
                if(timeAdd > 0){
                   timeAdded = "+"+ timeAdd.ToString("0");
+                  
+                  // positive sfx play 
+                  positiveTileSound.Play(); 
 
                }
                else{
                    timeAdded = timeAdd.ToString("0");
-
+                  //negative sfx play 
+                  negativeTileSound.Play();
                }
                
                Instantiate(floatingAddedTime, floatingNumberSpawnPoint.transform.position, Quaternion.identity);
