@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject hudUI;
     public GameObject gameOverUI;
     public GameObject killedBeetleUI;
+    public GameObject pauseUI;
     
     public int state;
     public const int WINKILL = -3;
@@ -100,10 +101,12 @@ public class GameManager : MonoBehaviour
 
     public void Pause(){
         Time.timeScale = 0;
+        pauseUI.SetActive(true);
     }
 
     public void Resume(){
         Time.timeScale = 1;
+        pauseUI.SetActive(false);
     }
 }
 
