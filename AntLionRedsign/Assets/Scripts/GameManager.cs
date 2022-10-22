@@ -97,5 +97,13 @@ public class GameManager : MonoBehaviour
     public void ReturnHome(){
         SceneManager.LoadScene("StartScreen");
     }
+
+    public void Pause(){
+        Time.timeScale = 0;
+    }
+
+    public void Resume(){
+        Time.timeScale = 1;
+    }
 }
 
