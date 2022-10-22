@@ -16,6 +16,7 @@ public class MapGenerator : MonoBehaviour
     [Header ("Tilemap Input")]
     public Tilemap contentGrid;
     public Tilemap barrierGrid;
+    public Tilemap powerupGrid; //test
 
     [Header ("Tiles to Use")]
     public Tile barrier;
@@ -29,6 +30,8 @@ public class MapGenerator : MonoBehaviour
     public Tile tilePositive1;
     public Tile tilePositive2;
     public Tile tilePositive3;
+    public Tile powerup; //test
+
 
     [Header("Probabilities of Tile out of 100")]
     public int probabilityOfNegative = 60;
@@ -57,6 +60,11 @@ public class MapGenerator : MonoBehaviour
                     barrierGrid.SetTile(new Vector3Int(x,y,0), barrier);
                 }
 
+                // //test for powerup
+                // else if(y > (height - colonyHeightLoc)){
+                //     powerupGrid.SetTile(new Vector3Int(x,y,0), powerup);
+                // }
+
                 else if (y > (height - colonyHeightLoc)){
                     contentGrid.SetTile(new Vector3Int(x,y,0), winTile); 
                 }
@@ -64,6 +72,7 @@ public class MapGenerator : MonoBehaviour
                 else{
                     int decider = (int)Random.Range(0, 100);
                     contentGrid.SetTile(new Vector3Int(x,y,0), DecideTile(decider));
+                    //powerups - random int 
                 }
   
 
@@ -79,7 +88,7 @@ public class MapGenerator : MonoBehaviour
     public int getColonyHeight(){
         return colonyHeightLoc;
     }
-
+//maybe poerups here
     private Tile DecideTile(int number){
         Tile tileToReturn;
         //probability of safetey Zones 
