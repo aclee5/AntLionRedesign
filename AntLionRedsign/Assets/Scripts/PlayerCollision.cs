@@ -91,11 +91,11 @@ public class PlayerCollision : MonoBehaviour
                string timeAdded;
                float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
                if(timeAdd > 0){
-                  timeAdded = "+"+ timeAdd.ToString("0") + " s";
+                  timeAdded = "+"+ timeAdd.ToString("0");
 
                }
                else{
-                   timeAdded = timeAdd.ToString("0") + " s";
+                   timeAdded = timeAdd.ToString("0");
 
                }
                
