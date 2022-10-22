@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: WinTile
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
+  - {fileID: 11400000, guid: 5cd394702fc964944b644d74be477d0f, type: 2}
   timeAdd: 0
   safe: 0
   win: 1
+  horizontalEntrance: 0
+  verticalEntrace: 0

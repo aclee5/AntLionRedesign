@@ -1063,7 +1063,7 @@ MonoBehaviour:
   barrier: {fileID: 11400000, guid: 5f4f2bce0bd89e147b90ee9d49b58895, type: 2}
   safetyTileHorizontal: {fileID: 11400000, guid: f9cb6d80ffa871b4c9086645031633fb, type: 2}
   safetyTileVertical: {fileID: 11400000, guid: eacedbf71c493d34388e1ecff3158277, type: 2}
-  winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
+  winTile: {fileID: 11400000, guid: 5cd394702fc964944b644d74be477d0f, type: 2}
   tileNoValue: {fileID: 11400000, guid: e447733f9a5a97a44acb16a2536eede2, type: 2}
   tileNegative1: {fileID: 11400000, guid: 7eda15da53804be45a02b6ac4800cc95, type: 2}
   tileNegative2: {fileID: 11400000, guid: 8376edfa2dfb01141bee31db9e0bf3f2, type: 2}
@@ -9231,7 +9231,9 @@ MonoBehaviour:
   gameManager: {fileID: 1315578687}
   canHit: 0
   canMove: 1
+  tempStop: 0
   decisionTime: {x: -2, y: 2}
+  freezeLength: 3
 --- !u!95 &1974688829
 Animator:
   serializedVersion: 4
