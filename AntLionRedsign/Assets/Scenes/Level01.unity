@@ -1060,7 +1060,7 @@ MonoBehaviour:
   barrierGrid: {fileID: 2131942593}
   barrierL: {fileID: 11400000, guid: 4b590053b1a36894c806649aef7f384f, type: 2}
   barrierR: {fileID: 11400000, guid: 8aa8e01df15d84e43acc1622fd9f40f4, type: 2}
-  barrier: {fileID: 11400000, guid: 03e29fb65d92df0449d9ef9c713cbd80, type: 2}
+  barrier: {fileID: 11400000, guid: 5f4f2bce0bd89e147b90ee9d49b58895, type: 2}
   safetyTileHorizontal: {fileID: 11400000, guid: f9cb6d80ffa871b4c9086645031633fb, type: 2}
   safetyTileVertical: {fileID: 11400000, guid: eacedbf71c493d34388e1ecff3158277, type: 2}
   winTile: {fileID: 11400000, guid: b215ea71cd6882046a28641950fc2b8a, type: 2}
