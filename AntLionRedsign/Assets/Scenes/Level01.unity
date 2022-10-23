@@ -1210,8 +1210,6 @@ MonoBehaviour:
   negative2: 0.8
   positive1: 0.6
   positive2: 0.9
-  powerupSound: {fileID: 596826401}
-  powerdownSound: {fileID: 1068543603}
 --- !u!4 &158777388
 Transform:
   m_ObjectHideFlags: 0
@@ -1954,6 +1952,8 @@ MonoBehaviour:
   positiveTileSound: {fileID: 96366459}
   negativeTileSound: {fileID: 1478861865}
   burrowSound: {fileID: 1499508343}
+  powerupSound: {fileID: 596826401}
+  powerdownSound: {fileID: 1068543603}
 --- !u!114 &266678741
 MonoBehaviour:
   m_ObjectHideFlags: 0
