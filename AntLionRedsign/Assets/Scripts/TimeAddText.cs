@@ -28,4 +28,8 @@ public class TimeAddText : MonoBehaviour
         addedTime.text = time;
 
     }
+
+    public void SetColor(Color colour){
+        addedTime.color = colour; 
+    }
 }
