@@ -58,7 +58,7 @@ public class CountDownTimer : MonoBehaviour
     }
     private void SetTimerText(){
         timerText.text = hasFormat ? currentTime.ToString(timeFormats[format]) : currentTime.ToString();
-        timerText.text = timerText.text + "s";
+        timerText.text = timerText.text;
 
     }
 
