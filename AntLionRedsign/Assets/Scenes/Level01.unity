@@ -941,6 +941,7 @@ MonoBehaviour:
   negative2: 0.8
   positive1: 0.6
   positive2: 0.9
+  hasPickup: 0
 --- !u!4 &158777388
 Transform:
   m_ObjectHideFlags: 0

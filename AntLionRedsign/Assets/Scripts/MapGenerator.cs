@@ -40,7 +40,12 @@ public class MapGenerator : MonoBehaviour
     public float positive1 = 0.6f;
     public float positive2 = 0.9f;
 
+<<<<<<< Updated upstream
     
+=======
+    public bool hasPickup = true;
+
+>>>>>>> Stashed changes
 
    
 
@@ -62,8 +67,28 @@ public class MapGenerator : MonoBehaviour
                 }
 
                 else{
+
                     int decider = (int)Random.Range(0, 100);
                     contentGrid.SetTile(new Vector3Int(x,y,0), DecideTile(decider));
+<<<<<<< Updated upstream
+=======
+
+                    if (hasPickup) { 
+
+                    int hasPickUpItem = (int)Random.Range(0, denominatorofPickup);
+                    if(hasPickUpItem == 1){
+                        if ((int)Random.Range(0, denominatorofPowerUp) < 2){
+                            
+                            Instantiate(powerUp, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                        }
+                        else{
+                            
+                            Instantiate(powerDown, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                        }
+                    }
+                    }
+
+>>>>>>> Stashed changes
                 }
   
 
