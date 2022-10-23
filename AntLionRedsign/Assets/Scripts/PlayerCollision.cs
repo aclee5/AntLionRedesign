@@ -27,6 +27,7 @@ public class PlayerCollision : MonoBehaviour
    public AudioSource powerupSound;
    public AudioSource powerdownSound;
    public AudioSource antdeathSound;
+   public AudioSource reachColonySound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy") && !onSafeTile){
@@ -109,6 +110,10 @@ public class PlayerCollision : MonoBehaviour
             onSafeTile = mapManager.dataFromTiles[onTile].safe;
             if(mapManager.dataFromTiles[onTile].win){
                Debug.Log("winning");
+               
+               //play winning sfx 
+               reachColonySound.Play();
+
                FindObjectOfType<GameManager>().UpdateState(-1);
             }
             if(onSafeTile && (onSafeTile != pastSafeTile)){ 
