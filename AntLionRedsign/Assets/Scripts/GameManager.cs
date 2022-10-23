@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
         if(hasEnded == false){
             Debug.Log("Game Over");
             hasEnded = true;
+            FindObjectOfType<EnemyController>().canHit = false;
+            FindObjectOfType<EnemyController>().canMove = false;
             Invoke("ShowEndScreen", restartDelay);
 
         }

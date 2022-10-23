@@ -124,17 +124,15 @@ public class PlayerCollision : MonoBehaviour
                   
                   // positive sfx play 
                   positiveTileSound.Play(); 
+                   colour = Color.cyan;
 
                }
                else{
                    timeAdded = timeAdd.ToString("0");
-                  //negative sfx play 
-                  negativeTileSound.Play();
-                  colour = Color.cyan; 
-               }
-               else{
-                   timeAdded = timeAdd.ToString("0");
                    colour = Color.red; 
+                    //negative sfx play 
+                  negativeTileSound.Play();
+                  
 
                }
                
