@@ -4709,7 +4709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
-  landslideLength: 5
+  landslideLength: 3
   timeTillLandslide: 10
   spawnLocationX: 0
   spawnLocationY: 16

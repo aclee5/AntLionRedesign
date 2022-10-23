@@ -103,10 +103,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level01");
     }
     public void LoadLevel(int number){
-        string levelNumber = number.ToString();
-        string sceneName = "Level0" + levelNumber;
-        SceneManager.LoadScene(sceneName);
-
+        switch(number){
+            case 1:
+                SceneManager.LoadScene("Level01");
+                break;
+            default:
+                SceneManager.LoadScene("Level01");
+                break;
+        }
     }
 
     public void ShowEndScreen(){
