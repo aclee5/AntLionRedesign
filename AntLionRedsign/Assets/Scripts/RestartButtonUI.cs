@@ -17,6 +17,10 @@ public class RestartButtonUI : MonoBehaviour
 
     }
 
+    public void StartLevel(int number){
+        FindObjectOfType<GameManager>().LoadLevel(number);
+    }
+
     public void ResumePlay(){
         FindObjectOfType<GameManager>().Resume();
 
@@ -28,4 +32,24 @@ public class RestartButtonUI : MonoBehaviour
 
 
     }
+
+    public void GuideScreenShow(){
+        FindObjectOfType<GameManager>().ShowInstruction();
+
+    }
+
+    public void GuideScreenOff(){
+        FindObjectOfType<GameManager>().ExitInstruction();
+    }
+
+    public void SettingScreenShow(){
+        FindObjectOfType<GameManager>().ShowSettings();
+
+    }
+
+    public void SettingScreenOff(){
+        FindObjectOfType<GameManager>().ExitSettings();
+    }
+
+
 }

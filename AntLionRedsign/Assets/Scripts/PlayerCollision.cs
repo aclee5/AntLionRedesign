@@ -118,6 +118,7 @@ public class PlayerCollision : MonoBehaviour
             if(timeAdd != 0){
                string timeAdded;
                float yLocation = (float)(transform.position.y + transform.localScale.y*0.5f);
+               Color colour;
                if(timeAdd > 0){
                   timeAdded = "+"+ timeAdd.ToString("0");
                   
@@ -129,12 +130,18 @@ public class PlayerCollision : MonoBehaviour
                    timeAdded = timeAdd.ToString("0");
                   //negative sfx play 
                   negativeTileSound.Play();
+                  colour = Color.cyan; 
+               }
+               else{
+                   timeAdded = timeAdd.ToString("0");
+                   colour = Color.red; 
+
                }
                
-               Instantiate(floatingAddedTime, floatingNumberSpawnPoint.transform.position, Quaternion.identity);
-               TimeAddText addText = floatingAddedTime.GetComponent<TimeAddText>();
-
+               GameObject addingTimeFloat = Instantiate(floatingAddedTime, floatingNumberSpawnPoint.transform.position, Quaternion.identity);
+               TimeAddText addText = addingTimeFloat.GetComponent<TimeAddText>();
                addText.SetText(timeAdded);
+               addText.SetColor(colour);
                
    
 
