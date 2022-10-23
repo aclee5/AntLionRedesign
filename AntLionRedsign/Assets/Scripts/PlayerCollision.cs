@@ -26,10 +26,13 @@ public class PlayerCollision : MonoBehaviour
    public AudioSource burrowSound;
    public AudioSource powerupSound;
    public AudioSource powerdownSound;
+   public AudioSource antdeathSound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy") && !onSafeTile){
          Debug.Log("Hit!");
+         //play death sfx
+         antdeathSound.Play();
          FindObjectOfType<GameManager>().UpdateState(-2);
 
       }
@@ -42,6 +45,10 @@ public class PlayerCollision : MonoBehaviour
    void OnTriggerEnter2D(Collider2D collision){
         if(collision.CompareTag("Obstacle") && !onSafeTile && (FindObjectOfType<LandslideController>().occuring == true)){
             Debug.Log("Losing");
+
+            //play death sfx
+            antdeathSound.Play();
+
             FindObjectOfType<GameManager>().UpdateState(-2);   
 
         }
