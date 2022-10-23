@@ -9385,8 +9385,8 @@ MonoBehaviour:
   player: {fileID: 266678736}
   playerCol: {fileID: 266678739}
   agroRange: 7
-  moveSpeed: 1.5
-  health: 3
+  moveSpeed: 2
+  health: 5
   healthBar: {fileID: 1950108318}
   movePoint: {fileID: 587795725}
   whatStopsMovement:
