@@ -24,6 +24,8 @@ public class PlayerCollision : MonoBehaviour
    public AudioSource positiveTileSound; 
    public AudioSource negativeTileSound;
    public AudioSource burrowSound;
+   public AudioSource powerupSound;
+   public AudioSource powerdownSound;
 
    private void OnCollisionEnter2D(Collision2D collision){
       if(collision.gameObject.CompareTag("Enemy") && !onSafeTile){
@@ -48,10 +50,12 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Hit This");
             if(collision.GetComponent<PickupItem>().isPowerUp){
                // FindObjectOfType<EnemyController>().SetEnemySpeed(0); 
+               powerupSound.Play();
                FindObjectOfType<EnemyController>().tempStop = true; 
             }
 
             else{
+               powerdownSound.Play();
                float currentSpeed = FindObjectOfType<EnemyController>().GetEnemySpeed();
                float addSpeed = currentSpeed +1;
                FindObjectOfType<EnemyController>().SetEnemySpeed(addSpeed);
