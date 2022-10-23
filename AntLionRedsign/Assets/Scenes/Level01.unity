@@ -1636,6 +1636,7 @@ MonoBehaviour:
   burrowSound: {fileID: 1499508343}
   powerupSound: {fileID: 596826401}
   powerdownSound: {fileID: 1068543603}
+  antdeathSound: {fileID: 0}
 --- !u!114 &266678741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3781,7 +3782,7 @@ AudioSource:
   m_GameObject: {fileID: 984863656}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6910609104769631240, guid: 21b622b9b2db26f44bc5d4bf77fa724c, type: 2}
   m_audioClip: {fileID: 8300000, guid: dfb44b9b3a0a7b4458bc90c80d9a4d05, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
