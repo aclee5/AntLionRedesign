@@ -403,6 +403,7 @@ MonoBehaviour:
   width: 16
   height: 50
   colonySpaceHeightPercentage: 0.1
+  hasPickup: 1
   contentGrid: {fileID: 510230965}
   barrierGrid: {fileID: 2131942593}
   barrierL: {fileID: 11400000, guid: 4b590053b1a36894c806649aef7f384f, type: 2}
@@ -4625,7 +4626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
   landslideLength: 3
-  timeTillLandslide: 10
+  timeTillLandslide: 8
   spawnLocationX: 0
   spawnLocationY: 16
   countDownTimer: {fileID: 1910947136}
@@ -6819,8 +6820,8 @@ MonoBehaviour:
   player: {fileID: 266678736}
   playerCol: {fileID: 266678739}
   agroRange: 7
-  moveSpeed: 2
-  health: 5
+  moveSpeed: 2.5
+  health: 10
   healthBar: {fileID: 1950108318}
   movePoint: {fileID: 587795725}
   whatStopsMovement:

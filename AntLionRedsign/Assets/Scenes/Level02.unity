@@ -403,6 +403,7 @@ MonoBehaviour:
   width: 16
   height: 50
   colonySpaceHeightPercentage: 0.1
+  hasPickup: 1
   contentGrid: {fileID: 510230965}
   barrierGrid: {fileID: 2131942593}
   barrierL: {fileID: 11400000, guid: 4b590053b1a36894c806649aef7f384f, type: 2}
@@ -6822,7 +6823,7 @@ MonoBehaviour:
   playerCol: {fileID: 266678739}
   agroRange: 7
   moveSpeed: 2
-  health: 5
+  health: 7
   healthBar: {fileID: 1950108318}
   movePoint: {fileID: 587795725}
   whatStopsMovement:

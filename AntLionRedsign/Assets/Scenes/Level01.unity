@@ -4628,7 +4628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
   landslideLength: 3
-  timeTillLandslide: 10
+  timeTillLandslide: 15
   spawnLocationX: 0
   spawnLocationY: 16
   countDownTimer: {fileID: 1910947136}
@@ -6822,7 +6822,7 @@ MonoBehaviour:
   player: {fileID: 266678736}
   playerCol: {fileID: 266678739}
   agroRange: 7
-  moveSpeed: 2
+  moveSpeed: 1
   health: 5
   healthBar: {fileID: 1950108318}
   movePoint: {fileID: 587795725}
