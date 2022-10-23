@@ -11,7 +11,8 @@ public class MapGenerator : MonoBehaviour
     
     public float colonySpaceHeightPercentage = 0.25f;
     private int colonySpaceOpeningWalls; 
-    private int colonyHeightLoc;   
+    private int colonyHeightLoc;
+    public bool hasPickup = true;
     
     [Header ("Tilemap Input")]
     public Tilemap contentGrid;
@@ -83,22 +84,31 @@ public class MapGenerator : MonoBehaviour
                 }
 
                 else{
-                    int decider = (int)Random.Range(0, 100);
-                    contentGrid.SetTile(new Vector3Int(x,y,0), DecideTile(decider));
 
-                    int hasPickUpItem = (int)Random.Range(0, denominatorofPickup);
-                    if(hasPickUpItem == 1){
-                        if ((int)Random.Range(0, denominatorofPowerUp) < 2){
-                            
-                            Instantiate(powerUp, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
-                        }
-                        else{
-                            
-                            Instantiate(powerDown, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                    
+
+                        int decider = (int)Random.Range(0, 100);
+                        contentGrid.SetTile(new Vector3Int(x, y, 0), DecideTile(decider));
+
+                        if (hasPickup)
+                        {
+                            int hasPickUpItem = (int)Random.Range(0, denominatorofPickup);
+                            if (hasPickUpItem == 1)
+                            {
+                                if ((int)Random.Range(0, denominatorofPowerUp) < 2)
+                                {
+
+                                    Instantiate(powerUp, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                                }
+                                else
+                                {
+
+                                    Instantiate(powerDown, new Vector3(x + 0.5f, y + 0.5f, 0), Quaternion.identity);
+                                }
+                            }
                         }
                     }
 
-                }
   
 
             }
