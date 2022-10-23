@@ -26,4 +26,8 @@ public class AudioManager : MonoBehaviour
         mixer.SetFloat(VolumeSettings.MIXER_SFX, Mathf.Log10(sfxVolume)*20);
 
     }
+
+    public void Silence(){
+        mixer.SetFloat(VolumeSettings.MIXER_SFX, 0.0001f); 
+    }
 }

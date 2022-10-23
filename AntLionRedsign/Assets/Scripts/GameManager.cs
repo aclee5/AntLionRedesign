@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private bool hasEnded = false;
     public float restartDelay = 0;
+    public AudioManager audioManager;
     public GameObject completeLevelUI;
     public GameObject hudUI;
     public GameObject gameOverUI;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
             hasEnded = true;
             FindObjectOfType<EnemyController>().canHit = false;
             FindObjectOfType<EnemyController>().canMove = false;
+            audioManager.Silence();
             Invoke("ShowEndScreen", restartDelay);
 
         }
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
         // Debug.Log("Level won");        
         completeLevelUI.SetActive(true);
         hudUI.SetActive(false);
+        audioManager.Silence();
 
     }
 
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<LandslideController>().occuring = false;  
         killedBeetleUI.SetActive(true);
         hudUI.SetActive(false);
+        audioManager.Silence();
 
     }
 

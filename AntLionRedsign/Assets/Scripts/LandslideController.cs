@@ -48,7 +48,11 @@ public class LandslideController : MonoBehaviour
         //Find landslide countdown timer to reset
         
         //plays sfx
-        landslideSound.Play();
+        if(FindObjectOfType<GameManager>().state > 0){
+            landslideSound.Play();
+
+        }
+       
         
 
     }

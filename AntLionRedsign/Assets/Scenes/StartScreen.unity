@@ -2638,6 +2638,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331430066}
   m_CullTransparentMesh: 1
+--- !u!114 &1340358740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8414450473802502222, guid: a070ba8d5cfdcd4459d3f3b5a7b49ef9, type: 3}
+  m_PrefabInstance: {fileID: 540117553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb63d57d39aa2a42b5cbeac9bf37cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1769329089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2880,6 +2891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 1
+  audioManager: {fileID: 1340358740}
   completeLevelUI: {fileID: 0}
   hudUI: {fileID: 0}
   gameOverUI: {fileID: 0}

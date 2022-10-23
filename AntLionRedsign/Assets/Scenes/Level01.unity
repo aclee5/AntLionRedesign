@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0.00000047683716}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 4.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8069665
@@ -4338,6 +4338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 1
+  audioManager: {fileID: 1768671835}
   completeLevelUI: {fileID: 1259595683}
   hudUI: {fileID: 2044506965}
   gameOverUI: {fileID: 1540995201}
@@ -8223,8 +8224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.099999905}
-  m_SizeDelta: {x: 30.0074, y: 9.9041}
+  m_AnchoredPosition: {x: 1.300003, y: 4.4}
+  m_SizeDelta: {x: 50.3636, y: 36.4296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758366904
 MonoBehaviour:
@@ -8248,7 +8249,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 05a61b625b5cd5f4aa34e3aafe58e1e8, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8321,6 +8322,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a070ba8d5cfdcd4459d3f3b5a7b49ef9, type: 3}
+--- !u!114 &1768671835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8414450473802502222, guid: a070ba8d5cfdcd4459d3f3b5a7b49ef9, type: 3}
+  m_PrefabInstance: {fileID: 1768671834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb63d57d39aa2a42b5cbeac9bf37cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1809689298
 PrefabInstance:
   m_ObjectHideFlags: 0
