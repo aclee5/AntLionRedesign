@@ -1636,6 +1636,7 @@ MonoBehaviour:
   burrowSound: {fileID: 1499508343}
   powerupSound: {fileID: 596826401}
   powerdownSound: {fileID: 1068543603}
+  antdeathSound: {fileID: 984863658}
 --- !u!114 &266678741
 MonoBehaviour:
   m_ObjectHideFlags: 0
