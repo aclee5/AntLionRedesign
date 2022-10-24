@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
         ChooseMoveDirection();
         sprite = GetComponent<SpriteRenderer>();
         healthBar.maxValue = health;
+        healthBar.value = health;
         canHit = true;
         canMove = true;
         tempStop = false; 

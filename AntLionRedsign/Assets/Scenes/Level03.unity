@@ -424,7 +424,7 @@ MonoBehaviour:
   probabilityOfNegative: 60
   probabilityOfPositive: 15
   probabilityOfSafety: 5
-  denominatorofPickup: 30
+  denominatorofPickup: 40
   denominatorofPowerUp: 10
   negative1: 0.6
   negative2: 0.8
@@ -6820,7 +6820,7 @@ MonoBehaviour:
   player: {fileID: 266678736}
   playerCol: {fileID: 266678739}
   agroRange: 7
-  moveSpeed: 2.5
+  moveSpeed: 3.5
   health: 10
   healthBar: {fileID: 1950108318}
   movePoint: {fileID: 587795725}
