@@ -424,8 +424,8 @@ MonoBehaviour:
   probabilityOfNegative: 60
   probabilityOfPositive: 15
   probabilityOfSafety: 5
-  denominatorofPickup: 25
-  denominatorofPowerUp: 10
+  denominatorofPickup: 15
+  denominatorofPowerUp: 7
   negative1: 0.6
   negative2: 0.8
   positive1: 0.6
@@ -4625,7 +4625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landslide: {fileID: 809979748960424954, guid: b9bf809e38c808c47a8e388f6d2b512c, type: 3}
-  landslideLength: 3
+  landslideLength: 4
   timeTillLandslide: 8
   spawnLocationX: 0
   spawnLocationY: 16
